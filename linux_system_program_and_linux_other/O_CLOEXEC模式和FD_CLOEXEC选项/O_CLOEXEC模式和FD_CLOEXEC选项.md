@@ -75,9 +75,9 @@ int main()
 >```./cloexec```
 >查看进程和进程资源，注意执行`execl`后进程名字变为`sleep`了
 >```ps aux|grep sleep```
-![1463068253963](https://github.com/HankCoder/csdnblogres/blob/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068253963.png)
+![1463068253963](https://raw.githubusercontent.com/HankCoder/csdnblogres/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068253963.png)
 >```lsof -p 6479```   
-![Alt text](./1463068308668.png)
+![Alt text](https://raw.github.com/HankCoder/csdnblogres/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068308668.png)
 > 可以看出进程资源中没有文件`my.txt`
 >不带宏`_O_CLOEXEC`编译
 >```gcc  -o nocloexec cloexec.c```
@@ -85,8 +85,8 @@ int main()
 >```./nocloexec```
 >查看进程和进程资源
 >```ps aux|grep sleep```
-![Alt text](./1463068378908.png)
+![Alt text](https://raw.githubusercontent.com/HankCoder/csdnblogres/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068378908.png)
 >```lsof -p 6497```
-![Alt text](./1463068482078.png)
+![Alt text](https://raw.githubusercontent.com/HankCoder/csdnblogres/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068482078.png)
 >可以看出进程资源中有文件`my.txt`
 >测试`fcntl`函数可以通过设置编译宏`-D_FCNTL_CLOEXEC`测试，编译测试过程同上，同理通过开启`-D_O_CLOEXEC -D_FORK`编译>选项测试使用`O_CLOEXEC`模式的描述符在子进程中的状态，通过宏`-D_DUP`编译选项测试`dup`函数对`O_CLOEXEC`的影响，编译测试过程略。
