@@ -75,7 +75,7 @@ int main()
 >```./cloexec```
 >查看进程和进程资源，注意执行`execl`后进程名字变为`sleep`了
 >```ps aux|grep sleep```
-![Aaron Swartz](https://github.com/HankCoder/csdnblogres/blob/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068253963.png)
+![1463068253963](https://github.com/HankCoder/csdnblogres/blob/master/linux_system_program_and_linux_other/O_CLOEXEC%E6%A8%A1%E5%BC%8F%E5%92%8CFD_CLOEXEC%E9%80%89%E9%A1%B9/1463068253963.png)
 >```lsof -p 6479```   
 ![Alt text](./1463068308668.png)
 > 可以看出进程资源中没有文件`my.txt`
